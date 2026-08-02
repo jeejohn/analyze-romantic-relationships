@@ -3,6 +3,12 @@ name: Release
 on:
   push:
     tags: ["v*"]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Release tag (for example, v0.1.0)
+        required: true
+        default: v0.1.0
 
 permissions:
   contents: write
@@ -29,7 +35,24 @@ jobs:
         run: |
           cd .agents/skills
           python -m zipfile -c ../../dist/analyze-romantic-relationships-skill.zip analyze-romantic-relationships
+      - name: Resolve release tag
+        id: release
+        shell: bash
+        run: |
+          if [[ "${GITHUB_EVENT_NAME}" == "workflow_dispatch" ]]; then
+            version="${{ inputs.version }}"
+          else
+            version="${GITHUB_REF_NAME}"
+          fi
+          if [[ ! "${version}" =~ ^v[0-9]+\.[0-9]+\.[0-9]+([.-][0-9A-Za-z.-]+)?$ ]]; then
+            echo "Invalid release tag: ${version}" >&2
+            exit 1
+          fi
+          echo "version=${version}" >> "${GITHUB_OUTPUT}"
       - name: Publish GitHub release
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release create "${GITHUB_REF_NAME}" dist/* --generate-notes
+        run: |
+          gh release create "${{ steps.release.outputs.version }}" dist/* \
+            --generate-notes \
+            --target "${GITHUB_SHA}"
