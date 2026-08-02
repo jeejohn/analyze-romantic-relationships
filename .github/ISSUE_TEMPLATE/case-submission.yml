@@ -1,0 +1,34 @@
+name: Synthetic case proposal
+description: Propose a non-identifying regression case
+title: "[Case]: "
+labels: ["synthetic-case", "needs-review"]
+body:
+  - type: markdown
+    attributes:
+      value: Raw real-world chats and screenshots are not accepted. Use an invented minimal case.
+  - type: textarea
+    id: boundary
+    attributes:
+      label: Failure mode covered
+    validations:
+      required: true
+  - type: textarea
+    id: case
+    attributes:
+      label: Synthetic case summary
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected boundaries
+      description: State what may and may not be concluded.
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Confirmation
+      options:
+        - label: This case is synthetic and cannot reasonably identify a real person.
+          required: true

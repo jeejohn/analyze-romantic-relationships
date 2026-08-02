@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0",
+  "case_id": "synthetic-conflict-001",
+  "title": "忙碌与陪伴冲突的合成案例",
+  "source": {
+    "type": "synthetic",
+    "deidentified": true
+  },
+  "consent": {
+    "allow_analysis": true,
+    "allow_publication": true
+  },
+  "relationship": {
+    "stage": "dating",
+    "participants": [
+      {"id": "A", "role": "partner"},
+      {"id": "B", "role": "partner"}
+    ],
+    "agreements": ["每周至少一次固定约会", "临时加班时提前说明"]
+  },
+  "events": [
+    {
+      "id": "E1",
+      "time": "第一周",
+      "source_type": "self-report",
+      "reporter": "A",
+      "summary": "A 报告 B 在约会当天因工作取消，并提出次日补上。",
+      "observable_actions": [
+        {"actor": "B", "action": "在约会当天说明加班并取消安排"},
+        {"actor": "B", "action": "提出次日见面并实际到场"}
+      ]
+    },
+    {
+      "id": "E2",
+      "time": "第三周",
+      "source_type": "self-report",
+      "reporter": "A",
+      "summary": "A 报告 B 再次取消约会，但没有提出替代安排。",
+      "observable_actions": [
+        {"actor": "B", "action": "在约会前取消安排"},
+        {"actor": "A", "action": "提出改为固定视频通话"}
+      ]
+    }
+  ],
+  "questions": [
+    "现有材料是否支持 B 存在稳定失约模式？",
+    "怎样区分工作压力与长期缺少关系投入？"
+  ],
+  "risk_flags": []
+}

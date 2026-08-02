@@ -1,0 +1,46 @@
+name: Bug report
+description: Report a reproducible Skill, validator, or documentation problem
+title: "[Bug]: "
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: Do not include real names, private chats, screenshots, contact details, or identifying information. Prefer a minimal synthetic reproduction.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Skill activation
+        - Evidence reasoning
+        - Safety boundary
+        - Case validator
+        - Installation or documentation
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Synthetic reproduction
+      description: Provide invented, non-identifying input and exact steps.
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual result
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected evidence or safety boundary
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy confirmation
+      options:
+        - label: This report contains no private or identifying relationship material.
+          required: true

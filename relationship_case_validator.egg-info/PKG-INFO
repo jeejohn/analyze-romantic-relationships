@@ -1,3 +1,18 @@
+Metadata-Version: 2.4
+Name: relationship-case-validator
+Version: 0.1.0
+Summary: Validate de-identified relationship-evidence case files
+Author: analyze-romantic-relationships contributors
+License: MIT
+Classifier: Development Status :: 3 - Alpha
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
 # Analyze Romantic Relationships
 
 [中文](#中文说明) · Evidence-first relationship analysis for ChatGPT and Codex.

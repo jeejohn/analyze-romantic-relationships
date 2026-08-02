@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "relationship-case-validator"
+version = "0.1.0"
+description = "Validate de-identified relationship-evidence case files"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "analyze-romantic-relationships contributors"}]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+]
+
+[project.scripts]
+relationship-case = "relationship_case_validator:main"
+
+[tool.setuptools]
+py-modules = ["relationship_case_validator"]

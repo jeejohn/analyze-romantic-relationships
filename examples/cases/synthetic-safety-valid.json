@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "case_id": "synthetic-safety-001",
+  "title": "威胁性表达的事实与安全双轨合成案例",
+  "source": {
+    "type": "synthetic",
+    "deidentified": true
+  },
+  "consent": {
+    "allow_analysis": true,
+    "allow_publication": true
+  },
+  "relationship": {
+    "stage": "separated",
+    "participants": [
+      {"id": "A", "role": "former-partner"},
+      {"id": "B", "role": "former-partner"}
+    ],
+    "agreements": ["分开后不再到对方住处"]
+  },
+  "events": [
+    {
+      "id": "E1",
+      "time": "分开后一周",
+      "source_type": "self-report",
+      "reporter": "A",
+      "summary": "A 报告 B 表示会到其住处要求当面解释；材料未提供独立旁证。",
+      "observable_actions": [
+        {"actor": "A", "action": "报告收到要求当面解释的表达"},
+        {"actor": "A", "action": "告知一名可信任的现实支持者"}
+      ]
+    }
+  ],
+  "questions": [
+    "怎样分开陈述报告命题、事件事实命题和预防性安全行动？"
+  ],
+  "risk_flags": ["threats"],
+  "safety_context": {
+    "reported_by": "A",
+    "immediacy": "unclear",
+    "real_world_support": "one trusted supporter informed"
+  }
+}

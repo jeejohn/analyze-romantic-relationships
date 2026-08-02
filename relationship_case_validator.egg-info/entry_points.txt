@@ -1,0 +1,2 @@
+[console_scripts]
+relationship-case = relationship_case_validator:main

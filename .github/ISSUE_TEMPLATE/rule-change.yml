@@ -1,0 +1,45 @@
+name: Rule change proposal
+description: Propose a durable rule with tests and counterexamples
+title: "[Rule]: "
+labels: ["rule-proposal", "needs-evidence"]
+body:
+  - type: textarea
+    id: failure
+    attributes:
+      label: Failure to prevent
+      description: Describe the reasoning error without identifying a real person.
+    validations:
+      required: true
+  - type: textarea
+    id: rule
+    attributes:
+      label: Narrow proposed rule
+    validations:
+      required: true
+  - type: textarea
+    id: positive
+    attributes:
+      label: Synthetic positive test
+    validations:
+      required: true
+  - type: textarea
+    id: counterexample
+    attributes:
+      label: Synthetic counterexample
+      description: Show when the rule must not apply.
+    validations:
+      required: true
+  - type: textarea
+    id: symmetry
+    attributes:
+      label: Role-swap result
+      description: Explain whether swapping gender, income, or narrator changes the evidence standard.
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy confirmation
+      options:
+        - label: All examples are synthetic and non-identifying.
+          required: true

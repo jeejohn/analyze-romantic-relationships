@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "case_id": "invalid-private-001",
+  "title": "此文件专门测试隐私和授权失败",
+  "source": {
+    "type": "user-submitted-anonymized",
+    "deidentified": true
+  },
+  "consent": {
+    "allow_analysis": true,
+    "allow_publication": false
+  },
+  "relationship": {
+    "stage": "dating",
+    "participants": [
+      {"id": "A", "role": "partner"},
+      {"id": "B", "role": "partner"}
+    ],
+    "agreements": []
+  },
+  "events": [
+    {
+      "id": "E1",
+      "time": "test-only",
+      "source_type": "self-report",
+      "reporter": "A",
+      "summary": "测试数据包含假的联系邮箱 nobody@example.invalid。",
+      "observable_actions": [
+        {"actor": "A", "action": "提交了测试材料"}
+      ]
+    }
+  ],
+  "questions": ["严格模式是否拒绝此文件？"],
+  "risk_flags": []
+}
